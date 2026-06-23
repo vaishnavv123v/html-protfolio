@@ -52,32 +52,42 @@
 
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img class="img-fluid" id="logo" src="assets/img/logo.png" alt=""
-            srcset=""></a>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img class="img-fluid" id="logo" src="assets/img/logo.png" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" style="color: rgb(7, 7, 46);" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="public/education.html">Education</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="public/work_experience.html">Work Experience</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="public/project.html">College Project</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="public/skill.html">skills</a>
+              <a class="nav-link" href="public/skill.html">Skills</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="public/contacts.html">contacts</a>
+              <a class="nav-link" href="public/certifications.html">Certifications</a>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link" href="public/contacts.html">Contacts</a>
+            </li>
+            <li class="nav-item">
+              <button class="theme-toggle nav-link" id="themeToggle" aria-label="Toggle theme">
+                🌙
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -87,39 +97,35 @@
 
 
 
-  <div class="content my-2">
+  <div class="content" style="padding-top: 100px;">
 
 
-    <div class="container py-3">
-      <div class="row align-items-center">
+    <div class="container py-5">
+      <div class="row align-items-center justify-content-center">
         <!-- Left side with image -->
-        <div class="col-md-4 d-flex justify-content-center">
-          <img id="pimg" src="assets/img/vaishnav.jpg" class="img-fluid px-5 py-2 mx-3" alt="Centered Image">
+        <div class="col-lg-4 col-md-5 d-flex justify-content-center mb-4 mb-md-0">
+          <img id="pimg" src="assets/img/363fccb7-6247-4ffa-ba23-45403edf3e11.png" class="img-fluid" alt="Vaishnav V Profile Photo">
         </div>
         <!-- Right side with heading and summary -->
-        <div class="col-md-8 text-center p-2">
-          <h1 id="text">Welcome to my, Portfolio</h1>
-          <p class="typetext">My name is vaishnav v, I'm BTech graduate in Electronics and Communication Engineering
-            from College of
-            Engineering Attingal
-            (APJ Abdul Kalam Technical University [KTU - (2024 passout)]).I'm passionate about programming with a strong
+        <div class="col-lg-8 col-md-7 text-center p-2">
+          <h1 id="text">Welcome to My Portfolio</h1>
+          <p class="typetext">My name is Vaishnav V, I'm a BTech graduate in Electronics and Communication Engineering
+            from College of Engineering Attingal, Kerala
+            (APJ Abdul Kalam Technical University [KTU - 2024 passout]). I'm passionate about programming with a strong
             foundation in HTML, CSS,
-            JavaScript, Python, Express, Django and React js. I'm eager to enhance my skills in real-world
+            JavaScript, Python, Express, Django and React JS. I'm eager to enhance my skills in real-world
             technologies and contribute as a dedicated software developer.
           </p>
-          <div class="row p-3 m-3">
-            <span class="col-md-2 m-2"><a href="https://www.linkedin.com/in/vaishnav-v-188b72290"><img
-                  src="assets/img/linkedin.svg" alt="" srcset=""></a>
-            </span>
-            <span class="col-md-2 m-2"><a href="https://github.com/vaishnavv007"><img src="assets/img/github.svg" alt=""
-                  srcset=""></a></span>
-            <div class="col-md-4 m-2">
-              <a class="btn btnc" href="assets/img/VAISHNAV V.pdf" download>download cv</a>
-            </div>
-
-
+          <div class="social-links d-flex justify-content-center align-items-center flex-wrap gap-3 mt-4">
+            <a href="https://www.linkedin.com/in/vaishnav-v-188b72290" target="_blank">
+              <img src="assets/img/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/vaishnavv007" target="_blank">
+              <img src="assets/img/github.svg" alt="GitHub">
+            </a>
+            <a href="https://vaishnavv007.github.io" target="_blank" class="btn btnc" style="padding: 12px 25px;">Portfolio</a>
+            <a class="btn btnc" href="assets/img/VAISHNAV_V.pdf" download>Download CV</a>
           </div>
-
         </div>
       </div>
     </div>
@@ -133,16 +139,12 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-sm-12 text-center">
-          <h3>contacts</h3>
-          <p>(+91) 6238797266</p>
-          <p>vaishnavvnair02001@gmail.com</p>
-          <p> copyright © <span id="currentYear"></span></p>
-
+          <h3>Contact Me</h3>
+          <p><a href="tel:+916238797266" style="color: white;">(+91) 6238797266</a></p>
+          <p><a href="mailto:vaishnavvnair02001@gmail.com" style="color: white;">vaishnavvnair02001@gmail.com</a></p>
+          <p>Copyright © <span id="currentYear"></span> Vaishnav V. All rights reserved.</p>
         </div>
-
-
       </div>
-
     </div>
   </footer>
 

@@ -47,28 +47,57 @@
             margin-top: 25px;
         }
 
-        .container-1 {
-            background-color: #f8d7da;
-            /* Light red */
+        .card:hover {
+            transform: translateY(-10px);
         }
 
-        .container-2 {
-            background-color: #d1ecf1;
-            /* Light blue */
+        /* Dark theme inline styles */
+        body.dark-theme h1,
+        body.dark-theme h2,
+        body.dark-theme h3 {
+            color: #e0e0e0 !important;
         }
 
-        #img {
-            border-radius: 6%;
+        body.dark-theme p,
+        body.dark-theme .typetext {
+            color: #b0b0b0 !important;
         }
 
-        .card {
-            background-color: #e3f2fd;
-            border-radius: 6%;
-            border: #474973 5px solid;
+        body.dark-theme .card {
+            background: rgba(40, 40, 60, 0.9) !important;
+            color: #e0e0e0 !important;
         }
 
-        .content {
-            background-color: rgb(7, 7, 46);
+        body.dark-theme .card-title {
+            color: #667eea !important;
+        }
+
+        body.dark-theme .card-body {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-theme .card-body p {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-theme .skill p {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-theme .skill a {
+            color: #667eea !important;
+        }
+
+        body.dark-theme .progress-bar {
+            color: white !important;
+        }
+
+        body.dark-theme i {
+            color: #667eea !important;
+        }
+
+        body.dark-theme .custom-container {
+            background: rgba(40, 40, 60, 0.9) !important;
         }
     </style>
 </head>
@@ -77,17 +106,17 @@
 
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
                 <a class="navbar-brand" href="../index.html"><img class="img-fluid" id="logo"
-                        src="../assets/img/logo.png" alt="" srcset=""></a>
+                        src="../assets/img/logo.png" alt="Logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="../index.html">Home</a>
                         </li>
@@ -95,16 +124,26 @@
                             <a class="nav-link" href="../public/education.html">Education</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="../public/work_experience.html">Work Experience</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="../public/project.html">College Project</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" style="color: rgb(7, 7, 46);"
-                                href="../public/skill.html">skills</a>
+                            <a class="nav-link active" href="../public/skill.html">Skills</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../public/contacts.html">contacts</a>
+                            <a class="nav-link" href="../public/certifications.html">Certifications</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="../public/contacts.html">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="theme-toggle nav-link" id="themeToggle" aria-label="Toggle theme">
+                                🌙
+                            </button>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -114,92 +153,109 @@
 
 
 
-    <div class="content my-2">
+    <div class="content" style="padding-top: 100px;">
 
 
-        <section class="container my-5 pb-3">
-            <h1 class="text-center mb-4">My Skills</h1>
-            <div class="row">
+        <section class="container py-5">
+            <h1 class="text-center mb-5" id="text">My Skills</h1>
+            <div class="row g-4">
                 <!-- Skill 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card text-center h-100">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card text-center h-100" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; border: none; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
                         <div class="card-body">
-                            <i class="bi bi-code-slash" style="font-size: 2rem;"></i> <!-- Bootstrap icon -->
-                            <h2 class="card-title mt-3 py-3 typetext">Web Development</h2>
-                            <div class="progress mb-2">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 80%;"
+                            <i class="bi bi-code-slash" style="font-size: 2.5rem; color: #667eea;"></i>
+                            <h2 class="card-title mt-3 py-3 typetext" style="color: #667eea; font-size: 1.4rem;">Web Development</h2>
+                            <div class="progress mb-3" style="height: 12px; border-radius: 6px;">
+                                <div class="progress-bar" role="progressbar" style="width: 80%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"
                                     aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
                             </div>
-                            <div class="skill p-4">
-                                <p>Html</p>
-                                <p>CSS</p>
-                                <p>javaScript</p>
-                                <p>Python</p>
-                                <p>express</p>
-                                <p>django</p>
-                                <p>Bootstrap</p>
-                                <p>jQuery</p>
-                                <p>SQL</p>
-                                <p>Node js</p>
-                                <p>React</p>
-                                <p>Mongo DB</p>
-                                <p>Flask</p>
-
+                            <div class="skill p-3">
+                                <p style="margin: 8px 0; font-size: 0.95rem;">HTML</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">CSS</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">JavaScript</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Python</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Express</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Django</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Bootstrap</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">jQuery</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">SQL</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Node.js</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">React</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">MongoDB</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Flask</p>
                             </div>
-
                         </div>
                     </div>
                 </div>
                 <!-- Skill 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card text-center h-100">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card text-center h-100" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; border: none; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
                         <div class="card-body">
-                            <i class="bi bi-palette" style="font-size: 2rem;"></i> <!-- Bootstrap icon -->
-                            <h2 class="card-title mt-3 py-3 typetext">Data Analysis</h2>
-                            <div class="progress mb-2">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 65%;"
+                            <i class="bi bi-palette" style="font-size: 2.5rem; color: #667eea;"></i>
+                            <h2 class="card-title mt-3 py-3 typetext" style="color: #667eea; font-size: 1.4rem;">Data Analysis</h2>
+                            <div class="progress mb-3" style="height: 12px; border-radius: 6px;">
+                                <div class="progress-bar" role="progressbar" style="width: 65%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"
                                     aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
                             </div>
-                            <div class="skill pt-4">
-                                <p>Excel</p>
-                                <p>Python</p>
-                                <p>Jupyter notebook</p>
-                                <p>Machine Learning</p>
-                                <p>scikit</p>
-                                <p>Numpy</p>
-                                <p>Pandas</p>
-
+                            <div class="skill p-3">
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Excel</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Python</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Jupyter Notebook</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Machine Learning</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Scikit-learn</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">NumPy</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Pandas</p>
                             </div>
-
                         </div>
                     </div>
                 </div>
                 <!-- Skill 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card text-center h-100">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card text-center h-100" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; border: none; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
                         <div class="card-body">
-                            <i class="bi bi-bar-chart" style="font-size: 2rem;"></i> <!-- Bootstrap icon -->
-                            <h2 class="card-title mt-3 py-3 typetext">Electronics</h2>
-                            <div class="progress mb-2">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 65%;"
+                            <i class="bi bi-bar-chart" style="font-size: 2.5rem; color: #667eea;"></i>
+                            <h2 class="card-title mt-3 py-3 typetext" style="color: #667eea; font-size: 1.4rem;">Electronics</h2>
+                            <div class="progress mb-3" style="height: 12px; border-radius: 6px;">
+                                <div class="progress-bar" role="progressbar" style="width: 65%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"
                                     aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
                             </div>
-                            <div class="skill p-4">
-                                <p>Arduino</p>
-                                <p>Raspberry pi</p>
-                                <p>ESP8266</p>
+                            <div class="skill p-3">
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Arduino</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Raspberry Pi</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">ESP8266</p>
                             </div>
-
-
-                            <div class=" pt-4 typetext">
-                                <h3>projects</h3>
+                            <div class="pt-3 typetext">
+                                <h3 style="color: #667eea; font-size: 1.1rem;">Projects</h3>
                             </div>
-                            <p class="skill pt-2"><a href="https://vaishnavv007.github.io/DRUM-PROJECT/">drum
-                                    project</a></p>
+                            <p class="skill pt-2"><a href="https://vaishnavv007.github.io/DRUM-PROJECT/" target="_blank" style="color: #667eea; font-size: 0.9rem;">Drum Project</a></p>
                         </div>
                     </div>
                 </div>
-                <!-- Add more skills as needed -->
+                <!-- Skill 4 - AI -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card text-center h-100" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; border: none; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                        <div class="card-body">
+                            <i class="bi bi-cpu" style="font-size: 2.5rem; color: #667eea;"></i>
+                            <h2 class="card-title mt-3 py-3 typetext" style="color: #667eea; font-size: 1.4rem;">Artificial Intelligence</h2>
+                            <div class="progress mb-3" style="height: 12px; border-radius: 6px;">
+                                <div class="progress-bar" role="progressbar" style="width: 90%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"
+                                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                            </div>
+                            <div class="skill p-3">
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Machine Learning</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Deep Learning</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Neural Networks</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Transformers</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Generative AI</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Regressions</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Classifications</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Reinforcement Learning</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">Scikit-learn</p>
+                                <p style="margin: 8px 0; font-size: 0.95rem;">TensorFlow</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -211,16 +267,12 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-sm-12 text-center">
-                    <h3>contacts</h3>
-                    <p>(+91) 6238797266</p>
-                    <p>vaishnavvnair02001@gmail.com</p>
-                    <p> copyright © <span id="currentYear"></span></p>
-
+                    <h3>Contact Me</h3>
+                    <p><a href="tel:+916238797266" style="color: white;">(+91) 6238797266</a></p>
+                    <p><a href="mailto:vaishnavvnair02001@gmail.com" style="color: white;">vaishnavvnair02001@gmail.com</a></p>
+                    <p>Copyright © <span id="currentYear"></span> Vaishnav V. All rights reserved.</p>
                 </div>
-
-
             </div>
-
         </div>
     </footer>
 

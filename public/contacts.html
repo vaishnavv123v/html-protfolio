@@ -47,25 +47,51 @@
             margin-top: 25px;
         }
 
-        .container-1 {
-            background-color: #f8d7da;
-            /* Light red */
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
         }
 
-        .container-2 {
-            background-color: #d1ecf1;
-            /* Light blue */
+        /* Dark theme inline styles */
+        body.dark-theme h1,
+        body.dark-theme h2,
+        body.dark-theme h3 {
+            color: #e0e0e0 !important;
         }
 
-        #img {
-            border-radius: 6%;
+        body.dark-theme p,
+        body.dark-theme .typetext {
+            color: #b0b0b0 !important;
         }
 
-        h2 {
-            font-family: "Roboto Mono", monospace;
-            font-optical-sizing: auto;
-            font-weight: 600;
-            font-style: normal;
+        body.dark-theme strong {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-theme label {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-theme .form-control {
+            background: rgba(40, 40, 60, 0.9) !important;
+            color: #e0e0e0 !important;
+            border-color: #667eea !important;
+        }
+
+        body.dark-theme .form-control::placeholder {
+            color: #888 !important;
+        }
+
+        body.dark-theme .btn {
+            color: white !important;
+        }
+
+        body.dark-theme a {
+            color: #667eea !important;
+        }
+
+        body.dark-theme .custom-container {
+            background: rgba(40, 40, 60, 0.9) !important;
         }
     </style>
 </head>
@@ -74,17 +100,17 @@
 
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
                 <a class="navbar-brand" href="../index.html"><img class="img-fluid" id="logo"
-                        src="../assets/img/logo.png" alt="" srcset=""></a>
+                        src="../assets/img/logo.png" alt="Logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="../index.html">Home</a>
                         </li>
@@ -92,16 +118,26 @@
                             <a class="nav-link" href="../public/education.html">Education</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="../public/work_experience.html">Work Experience</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="../public/project.html">College Project</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../public/skill.html">skills</a>
+                            <a class="nav-link" href="../public/skill.html">Skills</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" style="color: rgb(7, 7, 46);"
-                                href="../public/contacts.html">contacts</a>
+                            <a class="nav-link" href="../public/certifications.html">Certifications</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../public/contacts.html">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="theme-toggle nav-link" id="themeToggle" aria-label="Toggle theme">
+                                🌙
+                            </button>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -111,47 +147,50 @@
 
 
 
-    <div class="content my-2">
+    <div class="content" style="padding-top: 100px;">
 
 
-        <section class="container my-5 pt-4">
+        <section class="container py-5">
+            <h1 class="text-center mb-5" id="text">Contact Me</h1>
             <div class="row">
                 <!-- Contact Information -->
-                <div class="col-md-6 mb-4">
-                    <h2>Contact Information</h2>
-                    <p class="mb-2"><strong>Address:</strong> Thiruvananthapuram, ,Kerala, India</p>
-                    <p class="mb-2"><strong>Phone:</strong> +91 6238797266</p>
-                    <p class="mb-2"><strong>Email:</strong> vaishnavvnair02001@gmail.com</p>
-                    <p class="mb-2"><strong>WhatsApp number:</strong> +91 6238797266</p>
-                    <p class="mb-2"><strong>Linkedin:</strong><a
-                            href="https://www.linkedin.com/in/vaishnav-v-188b72290"> Click here</a></p>
-                    <p class="mb-2"><strong>Github:</strong><a href="https://github.com/vaishnavv007"> Click here</a>
-                    </p>
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);">
+                        <h2 class="mb-4" style="color: #667eea;">Contact Information</h2>
+                        <p class="mb-3 typetext"><strong>Address:</strong> Thiruvananthapuram, Kerala, India - 695305</p>
+                        <p class="mb-3 typetext"><strong>Phone:</strong> <a href="tel:+916238797266" style="color: #667eea;">+91 6238797266</a></p>
+                        <p class="mb-3 typetext"><strong>Email:</strong> <a href="mailto:vaishnavvnair02001@gmail.com" style="color: #667eea;">vaishnavvnair02001@gmail.com</a></p>
+                        <p class="mb-3 typetext"><strong>WhatsApp:</strong> <a href="https://wa.me/916238797266" target="_blank" style="color: #667eea;">+91 6238797266</a></p>
+                        <p class="mb-3 typetext"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vaishnav-v-188b72290" target="_blank" style="color: #667eea;">Click here</a></p>
+                        <p class="mb-3 typetext"><strong>GitHub:</strong> <a href="https://github.com/vaishnavv007" target="_blank" style="color: #667eea;">Click here</a></p>
+                    </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="col-md-6">
-                    <h2>Contact Me</h2>
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" class="form-control" id="subject" placeholder="Enter the subject">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="5"
-                                placeholder="Enter your message"></textarea>
-                        </div>
-
-                    </form>
+                <div class="col-lg-6 col-md-12">
+                    <div style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);">
+                        <h2 class="mb-4" style="color: #667eea;">Send a Message</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name" style="border-radius: 8px;">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email" style="border-radius: 8px;">
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" placeholder="Enter the subject" style="border-radius: 8px;">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5"
+                                    placeholder="Enter your message" style="border-radius: 8px;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btnc w-100">Send Message</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -164,16 +203,12 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-sm-12 text-center">
-                    <h3>contacts</h3>
-                    <p>(+91) 6238797266</p>
-                    <p>vaishnavvnair02001@gmail.com</p>
-                    <p> copyright © <span id="currentYear"></span></p>
-
+                    <h3>Contact Me</h3>
+                    <p><a href="tel:+916238797266" style="color: white;">(+91) 6238797266</a></p>
+                    <p><a href="mailto:vaishnavvnair02001@gmail.com" style="color: white;">vaishnavvnair02001@gmail.com</a></p>
+                    <p>Copyright © <span id="currentYear"></span> Vaishnav V. All rights reserved.</p>
                 </div>
-
-
             </div>
-
         </div>
     </footer>
 
