@@ -53,35 +53,37 @@
             margin-top: 25px;
         }
 
-
-
-        .container-1 {
-            /*background-color: #f8d7da;*/
-            background-color: #e3f2fd;
-            border-radius: 6%;
-            /* Light red */
-        }
-
-        .container-2 {
-            background-color: aliceblue;
-            /* Light blue */
-        }
-
-        .ctc {
-            border: #474973 solid 5px;
-        }
-
         #img {
-            border-radius: 6%;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
         }
 
-        h1 {
-            color: black;
+        #img:hover {
+            transform: scale(1.05);
         }
 
-        .content {
-            background-color: rgb(7, 7, 46);
+        /* Dark theme inline styles */
+        body.dark-theme h1,
+        body.dark-theme h2,
+        body.dark-theme h3 {
+            color: #e0e0e0 !important;
+        }
 
+        body.dark-theme p,
+        body.dark-theme .typetext {
+            color: #b0b0b0 !important;
+        }
+
+        body.dark-theme .custom-container {
+            background: rgba(40, 40, 60, 0.9) !important;
+        }
+
+        body.dark-theme #img {
+            border-color: #667eea !important;
+        }
+
+        body.dark-theme .skill {
+            color: #e0e0e0 !important;
         }
     </style>
 </head>
@@ -90,17 +92,17 @@
 
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
                 <a class="navbar-brand" href="../index.html"><img class="img-fluid" id="logo"
-                        src="../assets/img/logo.png" alt="" srcset=""></a>
+                        src="../assets/img/logo.png" alt="Logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="../index.html">Home</a>
                         </li>
@@ -108,16 +110,26 @@
                             <a class="nav-link" href="../public/education.html">Education</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" style="color: rgb(7, 7, 46);"
-                                href="../public/project.html">College Project</a>
+                            <a class="nav-link" href="../public/work_experience.html">Work Experience</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../public/skill.html">skills</a>
+                            <a class="nav-link active" href="../public/project.html">College Project</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../public/contacts.html">contacts</a>
+                            <a class="nav-link" href="../public/skill.html">Skills</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="../public/certifications.html">Certifications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../public/contacts.html">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="theme-toggle nav-link" id="themeToggle" aria-label="Toggle theme">
+                                🌙
+                            </button>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -127,43 +139,41 @@
 
 
 
-    <div class="content my-2">
+    <div class="content" style="padding-top: 100px;">
 
 
-        <div class="container ctc mt-5 pb-5" style="background-color: aliceblue;">
-            <h1 class="text-center mb-4 pt-4 pb-4">College Project</h1>
+        <div class="container py-5">
+            <h1 class="text-center mb-5" id="text">College Projects</h1>
 
             <!-- First Container -->
-            <div class="row custom-container container-1 align-items-center">
-                <div class="col-md-4 text-center">
-                    <img id="img" src="../assets/img/robot.jpg" class="img-fluid" alt="Image 1">
+            <div class="row custom-container align-items-center mb-4" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);">
+                <div class="col-lg-4 col-md-5 text-center mb-3 mb-md-0">
+                    <img id="img" src="../assets/img/robot.jpg" class="img-fluid rounded" alt="Robot Project" style="border-radius: 15px;">
                 </div>
-                <div class="col-md-7 text-center">
-                    <h2 class="skill">Main Projects</h2>
-                    <h3 class="typetext">Military Reconnaissance Robot</h3>
-                    <p class="typetext">The Military Reconnaissance Robot is a multi-functional rover designed for
-                        reconnaissance
+                <div class="col-lg-8 col-md-7 text-center">
+                    <h2 class="skill" style="color: #667eea;">Main Projects</h2>
+                    <h3 class="typetext" style="font-size: 1.5rem;">Military Reconnaissance Robot</h3>
+                    <p class="typetext">The Military Reconnaissance Robot is a multi-functional rover designed for reconnaissance
                         missions in military environments. It is controlled remotely through a website hosted on a
                         Raspberry Pi. ESP8266 facilitates the transmission of data from GPS, gas sensor, temperature and
                         humidity sensor to a Firebase database. The website is created using the Flask framework and
                         designed with Bootstrap. The first page features live video from the Pi camera, alongside manual
                         and auto control buttons. On the second page, the rover's location is displayed on a Google Map
-                        using data from Firebase and the JavaScript Map API, accompanied by other sensor data in a table
+                        using data from Firebase and the JavaScript Map API, accompanied by other sensor data in a table.
                     </p>
                 </div>
             </div>
 
             <!-- Second Container -->
-            <div class="row custom-container container-1 align-items-center">
-                <div class="col-md-4 text-center">
-                    <img id="img" src="../assets/img/mini.jpeg" class="img-fluid" alt="Image 1">
+            <div class="row custom-container align-items-center" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);">
+                <div class="col-lg-4 col-md-5 text-center mb-3 mb-md-0">
+                    <img id="img" src="../assets/img/mini.jpeg" class="img-fluid rounded" alt="Mini Project" style="border-radius: 15px;">
                 </div>
-                <div class="col-md-7 text-center">
-                    <h2 class="skill">Mini Project</h2>
-                    <h3 class="typetext">Smart GPS with OLED Display</h3>
-                    <p class="typetext">GPS module collect the data from the connected satellites and display the data
-                        through the
-                        calculations made by Arduino Nano
+                <div class="col-lg-8 col-md-7 text-center">
+                    <h2 class="skill" style="color: #667eea;">Mini Project</h2>
+                    <h3 class="typetext" style="font-size: 1.5rem;">Smart GPS with OLED Display</h3>
+                    <p class="typetext">GPS module collects the data from the connected satellites and displays the data
+                        through the calculations made by Arduino Nano.
                     </p>
                 </div>
             </div>
@@ -175,20 +185,16 @@
     </div>
 
 
-    <footer class="mt-5">
+    <footer>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-sm-12 text-center">
-                    <h3>contacts</h3>
-                    <p>(+91) 6238797266</p>
-                    <p>vaishnavvnair02001@gmail.com</p>
-                    <p> copyright © <span id="currentYear"></span></p>
-
+                    <h3>Contact Me</h3>
+                    <p><a href="tel:+916238797266" style="color: white;">(+91) 6238797266</a></p>
+                    <p><a href="mailto:vaishnavvnair02001@gmail.com" style="color: white;">vaishnavvnair02001@gmail.com</a></p>
+                    <p>Copyright © <span id="currentYear"></span> Vaishnav V. All rights reserved.</p>
                 </div>
-
-
             </div>
-
         </div>
     </footer>
 
